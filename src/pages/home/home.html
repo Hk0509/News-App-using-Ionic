@@ -1,14 +1,19 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+    <ion-title> My News </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v3">docs</a> will be your guide.
-  </p>
+<ion-content>
+  <ion-card *ngFor="let news of newsList">
+    <img src="{{news.urlToImage}}" />
+    <ion-card-content>
+      <ion-card-title> {{news.title}} </ion-card-title>
+      <p>{{news.author}}</p>
+      <p>{{news.publishedAt}}</p>
+      <br />
+      <p>{{news.description}}</p>
+      <a href="{{news.url}}">more...</a>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
